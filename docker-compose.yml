@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  poc:
+    image: node:10-alpine
+    command: npm start
+    working_dir: /home/node
+    depends_on:
+      - db
+    volumes:
+      - .:/home/node
+  
+  db:
+    image: postgres:10-alpine
+    hostname: db
+    environment: 
+      POSTGRES_USER: poc
+      POSTGRES_PASSWORD: poc
+      POSTGRES_DB: poc
+    ports:
+      - 5432:5432
+
+  pgadmin:
+    image: dpage/pgadmin4:4.5
+    depends_on: 
+      - db
+    ports:
+      - 3001:80
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: poc
+      PGADMIN_DEFAULT_PASSWORD: poc
+
+  

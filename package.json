@@ -1,0 +1,22 @@
+{
+  "name": "poc-multicolumn-unique-sequelize",
+  "version": "1.0.0",
+  "description": "Multiple Column uniqueness for Sequelize",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "poc",
+    "sequelize",
+    "nodejs",
+    "uniqueness-constraint"
+  ],
+  "author": "Igor Sant'ana",
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^7.9.0",
+    "sequelize": "^5.3.1"
+  }
+}
